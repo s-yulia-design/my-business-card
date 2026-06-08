@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Селиванова Юлия — визитка</title>
+    <meta
+      name="description"
+      content="Визитка Селивановой Юлии, специалиста по созданию сайтов, ботов и digital-проектов с помощью ИИ."
+    />
+    <style>
+      :root {
+        --bg: #120f24;
+        --card: rgba(255, 255, 255, 0.88);
+        --ink: #1c1931;
+        --muted: #5f5a79;
+        --accent: #7f5cff;
+        --accent-2: #26d7ff;
+        --accent-3: #ff8be8;
+        --line: rgba(127, 92, 255, 0.2);
+        --shadow: 0 30px 80px rgba(22, 18, 53, 0.34);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 32px;
+        color: var(--ink);
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(127, 92, 255, 0.6), transparent 32rem),
+          radial-gradient(circle at bottom right, rgba(38, 215, 255, 0.55), transparent 28rem),
+          linear-gradient(135deg, #140f2d 0%, #241c43 45%, #f4ecff 100%);
+      }
+
+      .business-card {
+        width: min(1120px, 100%);
+        display: grid;
+        grid-template-columns: minmax(320px, 0.95fr) minmax(360px, 1.1fr);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        border-radius: 34px;
+        background: var(--card);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(22px);
+      }
+
+      .visual {
+        position: relative;
+        min-height: 100%;
+        padding: 26px;
+        isolation: isolate;
+        background:
+          linear-gradient(140deg, rgba(255, 255, 255, 0.5), rgba(127, 92, 255, 0.18)),
+          linear-gradient(180deg, rgba(38, 215, 255, 0.12), rgba(255, 139, 232, 0.2));
+      }
+
+      .visual::before,
+      .visual::after {
+        position: absolute;
+        content: "";
+        border-radius: 999px;
+        filter: blur(2px);
+        z-index: -1;
+      }
+
+      .visual::before {
+        width: 220px;
+        height: 220px;
+        left: -60px;
+        top: 14%;
+        background: rgba(38, 215, 255, 0.35);
+      }
+
+      .visual::after {
+        width: 180px;
+        height: 180px;
+        right: 10%;
+        bottom: 8%;
+        background: rgba(255, 139, 232, 0.34);
+      }
+
+      .portrait {
+        width: 100%;
+        height: 100%;
+        min-height: 640px;
+        object-fit: cover;
+        border-radius: 26px;
+        box-shadow: 0 18px 55px rgba(36, 28, 67, 0.25);
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: clamp(30px, 5vw, 56px);
+      }
+
+      .eyebrow {
+        width: fit-content;
+        margin: 0;
+        padding: 8px 14px;
+        border: 1px solid rgba(127, 92, 255, 0.18);
+        border-radius: 999px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(38px, 5vw, 64px);
+        line-height: 0.96;
+        letter-spacing: -0.055em;
+      }
+
+      .subtitle {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(17px, 2vw, 22px);
+        line-height: 1.36;
+      }
+
+      .subtitle strong {
+        color: var(--ink);
+      }
+
+      .section {
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        color: var(--accent);
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.55;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .chips li {
+        padding: 10px 13px;
+        border: 1px solid rgba(38, 215, 255, 0.22);
+        border-radius: 14px;
+        color: #253151;
+        font-size: 15px;
+        font-weight: 700;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(221, 247, 255, 0.66));
+      }
+
+      .projects {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .projects li {
+        position: relative;
+        padding-left: 22px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.48;
+      }
+
+      .projects li::before {
+        position: absolute;
+        content: "";
+        width: 8px;
+        height: 8px;
+        left: 0;
+        top: 0.58em;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        box-shadow: 0 0 0 5px rgba(127, 92, 255, 0.1);
+      }
+
+      .contacts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .contact-link {
+        display: grid;
+        gap: 4px;
+        min-width: 0;
+        padding: 14px;
+        border: 1px solid rgba(127, 92, 255, 0.18);
+        border-radius: 16px;
+        color: inherit;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      .contact-label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .contact-value {
+        overflow-wrap: anywhere;
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .contact-link:hover {
+        border-color: rgba(127, 92, 255, 0.42);
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 900px) {
+        body {
+          padding: 18px;
+        }
+
+        .business-card {
+          grid-template-columns: 1fr;
+        }
+
+        .portrait {
+          min-height: 440px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .contacts {
+          grid-template-columns: 1fr;
+        }
+
+        .visual {
+          padding: 18px;
+        }
+
+        .portrait {
+          min-height: 360px;
+          border-radius: 20px;
+        }
+      }
+
+      @media print {
+        body {
+          padding: 0;
+          background: #ffffff;
+        }
+
+        .business-card {
+          width: 100%;
+          min-height: 100vh;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="business-card" aria-label="Визитка Селивановой Юлии">
+      <section class="visual" aria-label="Изображение специалиста в digital-пространстве">
+        <img
+          class="portrait"
+          src="assets/ai-specialist.svg"
+          alt="Футуристичный портрет специалиста в цифровой лаборатории с голографическими интерфейсами"
+        />
+      </section>
+
+      <section class="content">
+        <p class="eyebrow">Визитка</p>
+        <header>
+          <h1>Селиванова Юлия</h1>
+          <p class="subtitle">
+            <strong>Выпускник школы Нейросетей и СММ Ксении Барановой</strong>
+            <span>Специалист по созданию сайтов, ботов и digital-проектов с помощью ИИ</span>
+          </p>
+        </header>
+
+        <section class="section" aria-labelledby="services-title">
+          <h2 id="services-title">Описание услуг</h2>
+          <p>
+            Помощь в создании сайтов, разработке ботов (Telegram/VK), интеграции ИИ и оптимизации
+            бизнес-процессов.
+          </p>
+        </section>
+
+        <section class="section" aria-labelledby="skills-title">
+          <h2 id="skills-title">Навыки</h2>
+          <ul class="chips">
+            <li>Создание сайтов</li>
+            <li>Разработка ботов</li>
+            <li>Интеграция ИИ</li>
+            <li>Работа с интерфейсом и логикой проекта</li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="projects-title">
+          <h2 id="projects-title">Реализованные проекты</h2>
+          <ul class="projects">
+            <li>
+              <strong>Калькулятор строительных материалов:</strong> расчет стоимости строительства
+              частных домов.
+            </li>
+            <li><strong>Сайт грумера:</strong> онлайн-запись и услуги ухода за питомцами.</li>
+            <li>
+              <strong>Чат-бот рекламы и сувениров:</strong> автоматизация заказов.
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="contacts-title">
+          <h2 id="contacts-title">Контактная информация</h2>
+          <div class="contacts">
+            <a class="contact-link" href="tel:+79054336146">
+              <span class="contact-label">Тел.</span>
+              <span class="contact-value">+7 905 433 61 46</span>
+            </a>
+            <a class="contact-link" href="mailto:s-yulia@inbox.lv">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">s-yulia@inbox.lv</span>
+            </a>
+            <a class="contact-link" href="https://s-yulia-design.com">
+              <span class="contact-label">Сайт</span>
+              <span class="contact-value">s-yulia-design.com</span>
+            </a>
+            <a class="contact-link" href="https://t.me/s_yulia_design">
+              <span class="contact-label">Telegram</span>
+              <span class="contact-value">@s_yulia_design</span>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
