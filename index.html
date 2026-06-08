@@ -269,18 +269,107 @@
         }
       }
 
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+
       @media print {
+        * {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        html,
         body {
+          width: 297mm;
+          height: 210mm;
+        }
+
+        body {
+          display: block;
           padding: 0;
           background: #ffffff;
+          overflow: hidden;
         }
 
         .business-card {
-          width: 100%;
-          min-height: 100vh;
+          width: 297mm;
+          height: 210mm;
+          min-height: 0;
+          grid-template-columns: 0.92fr 1.08fr;
           border: 0;
           border-radius: 0;
           box-shadow: none;
+        }
+
+        .visual {
+          padding: 18px;
+        }
+
+        .portrait {
+          height: 100%;
+          min-height: 0;
+        }
+
+        .content {
+          gap: 14px;
+          padding: 28px 34px;
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+
+        .subtitle {
+          gap: 6px;
+          font-size: 16px;
+        }
+
+        .section {
+          padding-top: 12px;
+        }
+
+        h2 {
+          margin-bottom: 8px;
+          font-size: 11px;
+        }
+
+        p,
+        .projects li {
+          font-size: 13.5px;
+          line-height: 1.4;
+        }
+
+        .chips {
+          gap: 7px;
+        }
+
+        .chips li {
+          padding: 7px 9px;
+          border-radius: 11px;
+          font-size: 12px;
+        }
+
+        .projects {
+          gap: 7px;
+        }
+
+        .contacts {
+          gap: 8px;
+        }
+
+        .contact-link {
+          padding: 10px;
+          border-radius: 12px;
+        }
+
+        .contact-label {
+          font-size: 10px;
+        }
+
+        .contact-value {
+          font-size: 12.5px;
         }
       }
     </style>
